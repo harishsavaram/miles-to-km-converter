@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miles to Kilometers Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .converter {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(100% - 22px);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>Miles to Kilometers Converter</h1>
+        <input type="number" id="miles" placeholder="Enter miles">
+        <button onclick="convertMilesToKm()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertMilesToKm() {
+            const miles = document.getElementById('miles').value;
+            const kilometers = miles * 1.60934;
+            document.getElementById('result').innerText = `${miles} miles is equal to ${kilometers.toFixed(2)} kilometers.`;
+        }
+    </script>
+</body>
+</html>
